@@ -10,7 +10,6 @@ import requests
 from bokeh.plotting import figure, show
 from bokeh.embed import components 
 from datetime import datetime,timedelta
-import urllib2
 
 app = Flask(__name__)
 
