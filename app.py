@@ -38,10 +38,10 @@ def plot_close(stock):
     return p
 
 # Index page
-@app.route('/index')
+@app.route('/')
 def index():
 #	stock = request.args.get("stock")
-        stock=request.form['stock']
+        stock=str(request.form['stock'])
 
 	# Create the plot
 	plot = plot_close(stock)
