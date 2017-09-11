@@ -38,9 +38,10 @@ def plot_close(stock):
     return p
 
 # Index page
-@app.route('/page.html', methods=['GET','POST'])
+@app.route('/page.html', methods=['POST'])
 def index():
-	stock = request.args.get("stock")
+#	stock = request.args.get("stock")
+        stock=request.form['stock']
 
 	# Create the plot
 	plot = plot_close(stock)
