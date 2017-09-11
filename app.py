@@ -4,9 +4,9 @@ import bokeh
 import dill
 import jinja2
 import pip
-#import simplejson as json
+import simplejson as json
 import requests
-import json
+#import json
 from bokeh.plotting import figure, show
 from bokeh.embed import components 
 from datetime import datetime,timedelta

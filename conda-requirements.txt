@@ -4,4 +4,4 @@ dill
 flask
 jinja2
 pip
-json
+simplejson
