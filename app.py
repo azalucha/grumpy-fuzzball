@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-@app.route('/graph',methods=['GET','POST']')
+@app.route('/',methods=['GET','POST']')
 def graph():
   print('Endless winter')
   return render_template('index.html')
