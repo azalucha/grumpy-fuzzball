@@ -19,7 +19,7 @@ def get_data(stock):
     session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
     raw_data = session.get(api_url)
 #    data=raw_data.json()
-    data=json.loads(rawdata)
+    data=json.loads(raw_data)
     column_names=data['column_names']
     ndata=data['data']
     df = pd.DataFrame(ndata, columns=column_names)
