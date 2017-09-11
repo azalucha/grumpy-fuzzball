@@ -4,7 +4,7 @@ import bokeh
 import dill
 import jinja2
 import pip
-import simplejson
+import simplejson as json
 import requests
 #import json
 from bokeh.plotting import figure, show
@@ -16,13 +16,10 @@ app = Flask(__name__)
 
 def get_data(stock):
     api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
-#    session = requests.Session()
-#    session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
-#    raw_data = session.get(api_url)
-#    data=raw_data.json()
-    response = urllib2.urlopen(api_url)
-    data = simplejson.load(response)
-#    data=json.load(raw_data)
+    session = requests.Session()
+    session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
+    raw_data = session.get(api_url)
+    data=raw_data.json()
     column_names=data['column_names']
     ndata=data['data']
     df = pd.DataFrame(ndata, columns=column_names)
