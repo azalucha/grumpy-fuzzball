@@ -37,9 +37,12 @@ def plot_close(stock):
     p.line(date, close, line_width=2, legend=stock)
     return p
 
-# Index page
 @app.route('/')
 def index():
+  return render_template('index.html')
+
+@app.route('/stock', methods =['POST'])#output
+def stock():
 #	stock = request.args.get("stock")
         stock=str(request.form['stock'])
 
