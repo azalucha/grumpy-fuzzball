@@ -38,7 +38,7 @@ def plot_close(stock):
     return p
 
 # Index page
-@app.route('/')
+@app.route('/page.html', methods=['GET','POST'])
 def index():
 	stock = request.args.get("stock")
 
