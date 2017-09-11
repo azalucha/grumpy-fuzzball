@@ -38,8 +38,8 @@ def plot_close(stock):
     return p
 
 @app.route('/')
-def index():
-  return render_template('index.html')
+def form():
+    return render_template('form.html')
 
 @app.route('/graph', methods=['POST'])#output
 def stock():
