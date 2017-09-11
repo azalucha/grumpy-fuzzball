@@ -4,7 +4,7 @@ import bokeh
 import dill
 import jinja2
 import pip
-import simplejson as json
+import simplejson
 import requests
 #import json
 from bokeh.plotting import figure, show
