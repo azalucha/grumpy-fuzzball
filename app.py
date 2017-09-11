@@ -10,6 +10,7 @@ import requests
 from bokeh.plotting import figure, show
 from bokeh.embed import components 
 from datetime import datetime,timedelta
+import StringIO as io
 
 app = Flask(__name__)
 
@@ -18,7 +19,8 @@ def get_data(stock):
     session = requests.Session()
     session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
     raw_data = session.get(api_url)
-    data=raw_data.json()
+    data= json.loads(io.StringIO(str(raw_data)))
+#    data=raw_data.json()
     column_names=data['column_names']
     ndata=data['data']
     df = pd.DataFrame(ndata, columns=column_names)
