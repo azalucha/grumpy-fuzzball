@@ -44,7 +44,8 @@ def index():
 @app.route('/graph')#output
 def stock():
 #	stock = request.args.get("stock")
-        stock=str(request.form['stock'])
+#        stock=str(request.form['stock'])
+        stock = request.args.get('stock', '').upper()
 
 	# Create the plot
 	plot = plot_close(stock)
