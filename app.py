@@ -31,13 +31,13 @@ def plot_close(stock):
     date=pd.to_datetime(df['Date'])
     datelist = date.Date.tolist()
     p=figure(x_axis_type='datetime')
-#    p = figure(tools="pan,wheel_zoom,box_zoom,reset",
-#              title='Data from Quandle WIKI set',
-#              x_axis_label='Date',
-#              x_axis_type='datetime',
-#              y_axis_label='Closing price')
+    p = figure(tools="pan,wheel_zoom,box_zoom,reset",
+              title='Data from Quandle WIKI set',
+              x_axis_label='Date',
+              x_axis_type='datetime',
+              y_axis_label='Closing price')
 ##              x_range=(dt.datetime.now()-dt.timedelta(days=31),dt.datetime.now()))
-#    p.line(date, close, line_width=2, legend=stock)
+    p.line(date, close, line_width=2, legend=stock)
     return p
 
 @app.route('/')
