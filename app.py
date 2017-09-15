@@ -42,7 +42,7 @@ def index():
   return render_template('index.html')
 
 @app.route('/graph')#output
-def stock():
+def graph():
 #	stock = request.args.get("stock")
 #        stock=str(request.form['stock'])
         stock = request.args.get('stock', '').upper()
