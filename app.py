@@ -26,9 +26,9 @@ def get_data(stock):
     return df
 
 def plot_close(stock):
-    df=get_data(stock)
-    close=pd.to_numeric(df['Close'])
-    date=pd.to_datetime(df['Date'])
+#    df=get_data(stock)
+#    close=pd.to_numeric(df['Close'])
+#    date=pd.to_datetime(df['Date'])
 #    datelist = date.tolist()
     x=range(10)
     y=range(10)
