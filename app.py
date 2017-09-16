@@ -40,7 +40,8 @@ def plot_close(stock):
 ##              x_range=(dt.datetime.now()-dt.timedelta(days=31),dt.datetime.now()))
 #    p.line(date, close, line_width=2, legend=stock)
     p.line(x,y,line_width=2, legend=stock)
-    return p
+    script, div = components(plot)
+    return script, div
 
 @app.route('/')
 def index():
@@ -53,7 +54,7 @@ def graph():
         stock = request.args.get('stock', '').upper()
 
 	# Create the plot
-	plot = plot_close(stock)
+	script, div = plot_close(stock)
 		
 	# Embed plot into HTML via Flask Render
 	script, div = components(plot)
