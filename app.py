@@ -39,7 +39,7 @@ def plot_close(stock):
               y_axis_label='Closing price')
 ##              x_range=(dt.datetime.now()-dt.timedelta(days=31),dt.datetime.now()))
 #    p.line(date, close, line_width=2, legend=stock)
-     p.line(x,y,line_width=2, legend=stock)
+    p.line(x,y,line_width=2, legend=stock)
     return p
 
 @app.route('/')
