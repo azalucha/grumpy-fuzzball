@@ -40,7 +40,7 @@ def plot_close(stock):
 ##              x_range=(dt.datetime.now()-dt.timedelta(days=31),dt.datetime.now()))
 #    p.line(date, close, line_width=2, legend=stock)
     p.line(x,y,line_width=2, legend=stock)
-    script, div = components(plot)
+    script, div = components(p)
     return script, div
 
 @app.route('/')
