@@ -57,7 +57,6 @@ def graph():
 	script, div = plot_close(stock)
 		
 	# Embed plot into HTML via Flask Render
-	script, div = components(plot)
 	return render_template("graph.html", script=script, div=div)
 
 # With debug=True, Flask server will auto-reload 
