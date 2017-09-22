@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script -->
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    
+    <link href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.4.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.4.min.js"></script>
+    {% block script %}{% endblock %}
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+    
+    <form method='get' action='/lookup'>
+      <input type="text" placeholder="Stock Symbol" name="symbol" value="{{ symbol }}" />
+      for the last <input type="number" min="1" name="days" value="{{ days }}" /> days.
+      <input type="submit" value="Look up" />
+    </form>
+    
+    <footer>Powered by <a href="https://www.quandl.com/">Quandl</a>.</footer>
+  </body>
+</html>
