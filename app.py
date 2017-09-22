@@ -26,32 +26,32 @@ def load_data(symbol, start_date, end_date):
     return pandas.read_csv(StringIO(response.text), parse_dates=['Date'])
 
 def get_plot(symbol, days):
-##    now = dt.datetime.now()
-##    data = load_data(symbol, now - dt.timedelta(days), now)
+    now = dt.datetime.now()
+    data = load_data(symbol, now - dt.timedelta(days), now)
     
-##    plot = figure(x_axis_type='datetime')
-##    datelist = data.Date.tolist()
-##    plot.patch(datelist + datelist[::-1], data.Low.tolist() + data.High.tolist()[::-1],
-##               alpha=0.5, line_width=1, legend='High/Low')
-##    plot.line(data.Date, data.Open, line_color='green', line_width=3, legend='Open', line_join='bevel')
-##    plot.line(data.Date, data.Close, line_color='orange', line_width=3, legend='Close', line_join='bevel')
-##    plot.yaxis.axis_label = 'Price'
-##    plot.title = SYMBOLS[symbol]
+    plot = figure(x_axis_type='datetime')
+    datelist = data.Date.tolist()
+    plot.patch(datelist + datelist[::-1], data.Low.tolist() + data.High.tolist()[::-1],
+               alpha=0.5, line_width=1, legend='High/Low')
+    plot.line(data.Date, data.Open, line_color='green', line_width=3, legend='Open', line_join='bevel')
+    plot.line(data.Date, data.Close, line_color='orange', line_width=3, legend='Close', line_join='bevel')
+    plot.yaxis.axis_label = 'Price'
+    plot.title = SYMBOLS[symbol]
  
-    x=range(10)
-    y=range(10)
-    p = figure(tools="pan,wheel_zoom,box_zoom,reset",
-              title='Data from Quandle WIKI set',
-              x_axis_label='Date',
+#    x=range(10)
+#    y=range(10)
+#    p = figure(tools="pan,wheel_zoom,box_zoom,reset",
+#              title='Data from Quandle WIKI set',
+#              x_axis_label='Date',
 #              x_axis_type='datetime',
-              y_axis_label='Closing price')
-##              x_range=(dt.datetime.now()-dt.timedelta(days=31),dt.datetime.now()))
+#              y_axis_label='Closing price')
+###              x_range=(dt.datetime.now()-dt.timedelta(days=31),dt.datetime.now()))
 #    p.line(date, close, line_width=2, legend=stock)
-    p.line(x,y,line_width=2, legend=symbol)
+#    p.line(x,y,line_width=2, legend=symbol)
 #    script, div = components(p)
 #    return script, div
-   
-    return components(p)
+
+    return components(plot)
 
 def get_examples():
     keys = random.sample(SYMBOLS.keys(), 3)
