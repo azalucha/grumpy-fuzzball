@@ -51,7 +51,7 @@ def get_plot(symbol, days):
 #    script, div = components(p)
 #    return script, div
    
-    return components(plot)
+    return components(p)
 
 def get_examples():
     keys = random.sample(SYMBOLS.keys(), 3)
