@@ -14,7 +14,7 @@ import datetime as dt
 
 app = Flask(__name__)
 
-#def get_data(stock):
+def get_data(stock):
     api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
     session = requests.Session()
     session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
