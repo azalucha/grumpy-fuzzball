@@ -15,31 +15,28 @@ import datetime as dt
 app = Flask(__name__)
 
 #def get_data(stock):
-#    api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
-#    session = requests.Session()
-#    session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
-#    raw_data = session.get(api_url)
-#    data = raw_data.json()
-#    column_names=data['column_names']
-#    ndata=data['data']
-#    df = pd.DataFrame(ndata, columns=column_names)
-#    return df
+    api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
+    session = requests.Session()
+    session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
+    raw_data = session.get(api_url)
+    data = raw_data.json()
+    column_names=data['column_names']
+    ndata=data['data']
+    df = pd.DataFrame(ndata, columns=column_names)
+    return df
 
 def plot_close(stock):
-#    df=get_data(stock)
-#    close=pd.to_numeric(df['Close'])
-#    date=pd.to_datetime(df['Date'])
-#    datelist = date.tolist()
-    x=range(10)
-    y=range(10)
+    df=get_data(stock)
+    close=pd.to_numeric(df['Close'])
+    date=pd.to_datetime(df['Date'])
+    datelist = date.tolist()
     p = figure(tools="pan,wheel_zoom,box_zoom,reset",
               title='Data from Quandle WIKI set',
               x_axis_label='Date',
-#              x_axis_type='datetime',
+              x_axis_type='datetime',
               y_axis_label='Closing price')
 ##              x_range=(dt.datetime.now()-dt.timedelta(days=31),dt.datetime.now()))
-#    p.line(date, close, line_width=2, legend=stock)
-    p.line(x,y,line_width=2, legend=stock)
+    p.line(date, close, line_width=2, legend=stock)
     script, div = components(p)
     return script, div
 
