@@ -32,7 +32,7 @@ def plot_close(stock):
 #    datelist = date.tolist()
     x=range(10)
     y=range(10)
-    p = figure(tools="pan,wheel_zoom,box_zoom,reset",
+    p = create_figure(tools="pan,wheel_zoom,box_zoom,reset",
               title='Data from Quandle WIKI set',
               x_axis_label='Date',
 #              x_axis_type='datetime',
