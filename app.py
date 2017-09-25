@@ -37,7 +37,7 @@ def plot_close(stock):
     ndata=data['data']
     df = pandas.DataFrame(ndata, columns=column_names)
     close=pandas.to_numeric(df['Close'])
-#    date=pd.to_datetime(df['Date'])
+    date=pandas.to_datetime(df['Date'])
 #    datelist = date.tolist()
 #    p = figure(tools="pan,wheel_zoom,box_zoom,reset",
 #              title='Data from Quandle WIKI set',
