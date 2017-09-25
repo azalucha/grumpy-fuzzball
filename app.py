@@ -33,7 +33,7 @@ def plot_close(stock):
     session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
     raw_data = session.get(api_url)
     data = raw_data.json()
-
+    column_names=data['column_names']
 #    close=pd.to_numeric(df['Close'])
 #    date=pd.to_datetime(df['Date'])
 #    datelist = date.tolist()
