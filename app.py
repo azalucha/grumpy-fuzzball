@@ -39,20 +39,20 @@ def plot_close(stock):
     close=pandas.to_numeric(df['Close'])
     date=pandas.to_datetime(df['Date'])
     datelist = date.tolist()
-#    p = figure(tools="pan,wheel_zoom,box_zoom,reset",
-#              title='Data from Quandle WIKI set',
-#              x_axis_label='Date',
-#              x_axis_type='datetime',
-#              y_axis_label='Closing price')
-##              x_range=(dt.datetime.now()-dt.timedelta(days=31),dt.datetime.now()))
-#    p.line(date, close, line_width=2, legend=stock)
-    x=range(10)
-    y=range(10)
     p = figure(tools="pan,wheel_zoom,box_zoom,reset",
               title='Data from Quandle WIKI set',
               x_axis_label='Date',
+              x_axis_type='datetime',
               y_axis_label='Closing price')
-    p.line(x,y,line_width=2, legend=stock)
+##              x_range=(dt.datetime.now()-dt.timedelta(days=31),dt.datetime.now()))
+#    p.line(date, close, line_width=2, legend=stock)
+#    x=range(10)
+#    y=range(10)
+#    p = figure(tools="pan,wheel_zoom,box_zoom,reset",
+#              title='Data from Quandle WIKI set',
+#              x_axis_label='Date',
+#              y_axis_label='Closing price')
+#    p.line(x,y,line_width=2, legend=stock)
 
 
 
