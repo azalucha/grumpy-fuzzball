@@ -35,6 +35,7 @@ def plot_close(stock):
     data = raw_data.json()
     column_names=data['column_names']
     ndata=data['data']
+    df = pd.DataFrame(ndata, columns=column_names)
 #    close=pd.to_numeric(df['Close'])
 #    date=pd.to_datetime(df['Date'])
 #    datelist = date.tolist()
