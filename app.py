@@ -14,16 +14,16 @@ from datetime import datetime,timedelta
 
 app = Flask(__name__)
 
-def get_data(stock):
-    api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
-    session = requests.Session()
-    session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
-    raw_data = session.get(api_url)
-    data = raw_data.json()
-    column_names=data['column_names']
-    ndata=data['data']
-    df = pd.DataFrame(ndata, columns=column_names)
-    return df
+#def get_data(stock):
+#    api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
+#    session = requests.Session()
+#    session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
+#    raw_data = session.get(api_url)
+#    data = raw_data.json()
+#    column_names=data['column_names']
+#    ndata=data['data']
+#    df = pd.DataFrame(ndata, columns=column_names)
+#    return df
 
 def plot_close(stock):
 #    df=get_data(stock)
