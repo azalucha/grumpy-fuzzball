@@ -9,7 +9,7 @@ import requests
 #import json
 from bokeh.plotting import figure, show
 from bokeh.embed import components 
-from datetime import datetime,timedelta
+from datetime import datetime,timedelta,now
 #import datetime as dt
 
 app = Flask(__name__)
@@ -44,7 +44,7 @@ def plot_close(stock):
               x_axis_label='Date',
               x_axis_type='datetime',
               y_axis_label='Closing price')
-##              x_range=(dt.datetime.now()-dt.timedelta(days=31),dt.datetime.now()))
+              x_range=(datetime.datetime.now()-datettime.timedelta(days=31),datetime.datetime.now()))
     p.line(date, close, line_width=2, legend=stock)
 #    x=range(10)
 #    y=range(10)
