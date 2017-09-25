@@ -26,8 +26,11 @@ app = Flask(__name__)
 #    return df
 
 def plot_close(stock):
+##I don't know why it refuses to call get_data?
 #    df=get_data(stock)
-#     get_data(stock)
+    api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
+
+
 #    close=pd.to_numeric(df['Close'])
 #    date=pd.to_datetime(df['Date'])
 #    datelist = date.tolist()
