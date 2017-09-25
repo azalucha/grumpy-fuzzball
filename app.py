@@ -27,7 +27,7 @@ def get_data(stock):
 
 def plot_close(stock):
     df=get_data(stock)
-    close=pd.to_numeric(df['Close'])
+#    close=pd.to_numeric(df['Close'])
 #    date=pd.to_datetime(df['Date'])
 #    datelist = date.tolist()
 #    p = figure(tools="pan,wheel_zoom,box_zoom,reset",
