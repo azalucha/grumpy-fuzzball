@@ -34,6 +34,7 @@ def plot_close(stock):
     raw_data = session.get(api_url)
     data = raw_data.json()
     column_names=data['column_names']
+    ndata=data['data']
 #    close=pd.to_numeric(df['Close'])
 #    date=pd.to_datetime(df['Date'])
 #    datelist = date.tolist()
