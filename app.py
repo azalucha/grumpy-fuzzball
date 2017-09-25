@@ -14,8 +14,7 @@ from datetime import datetime,timedelta
 
 app = Flask(__name__)
 
-def get_data(stock):
-     x=42
+#def get_data(stock):
 #    api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
 #    session = requests.Session()
 #    session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
@@ -25,11 +24,10 @@ def get_data(stock):
 #    ndata=data['data']
 #    df = pd.DataFrame(ndata, columns=column_names)
 #    return df
-     return x
 
 def plot_close(stock):
 #    df=get_data(stock)
-     get_data(stock)
+#     get_data(stock)
 #    close=pd.to_numeric(df['Close'])
 #    date=pd.to_datetime(df['Date'])
 #    datelist = date.tolist()
