@@ -43,8 +43,8 @@ def plot_close(stock):
               title='Data from Quandle WIKI set',
               x_axis_label='Date',
               x_axis_type='datetime',
-              y_axis_label='Closing price',
-              x_range=(datetime.datetime.now()-datettime.timedelta(days=31),datetime.datetime.now()))
+              y_axis_label='Closing price')
+#              x_range=(datetime.datetime.now()-datettime.timedelta(days=31),datetime.datetime.now()))
     p.line(date, close, line_width=2, legend=stock)
 #    x=range(10)
 #    y=range(10)
