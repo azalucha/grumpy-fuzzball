@@ -31,6 +31,7 @@ def plot_close(stock):
     api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
     session = requests.Session()
     session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
+    raw_data = session.get(api_url)
 #    close=pd.to_numeric(df['Close'])
 #    date=pd.to_datetime(df['Date'])
 #    datelist = date.tolist()
